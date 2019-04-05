@@ -13,7 +13,7 @@
 
 <body>
   <!--CABEZERA-->
-  <div>
+  <div class="sticky-top" style="background-color: white;">
     <a href="index.php"><img src="img/MixLablogo.png" class="logoTam"></a>
   </div>
 
