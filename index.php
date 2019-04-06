@@ -12,27 +12,24 @@
 </head>
 
 <body>
-  <!--CABEZERA-->
-  <div class="sticky-top" style="background-color: white;">
-    <a href="index.php"><img src="img/MixLablogo.png" class="logoTam"></a>
-  </div>
-
-
   <!--BUSCADOR CON BOTON-->
-  <div class="buscadorColor">
-    <nav class="navbar navbar-expand-md navbar-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light justify-content-md-center justify-content-start" style="padding: 0%;">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline" method="post">
-          <input class="form-control mr-sm-2" type="search" placeholder="Fabrik" aria-label="Fabrik">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="form-inline flex-row justify-content-md-center justify-content-start flex-nowrap" method="post">
+            <input class="form-control mr-sm-2 text-success border border-success" type="search" placeholder="Fabrik" aria-label="Fabrik">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+      <div class="navbar-collapse collapse d-flex flex-row-reverse w-100" id="collapsingNavbar2">
+          <a href="index.php" class="float-right"><img src="img/MixLablogo.png" class="logoTam float-right"></a>
       </div>
-    </nav>
-  </div>
+  </nav>
 
   <!--IMAGENES SLIDER-->
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
