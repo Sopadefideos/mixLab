@@ -13,7 +13,7 @@
 
 <body>
   <!--BUSCADOR CON BOTON-->
-  <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light justify-content-md-center justify-content-start" style="padding: 0%;">
+  <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light justify-content-md-center justify-content-start" style="padding: 0%;border-bottom: 2px solid green">
       <nav class="navbar navbar-expand-md navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
