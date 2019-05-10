@@ -49,7 +49,7 @@
             <img src="<?php echo $imgDj; ?>" alt="">
             <h5 class="card-title text-success" style="font-size:4vw;"><?php  echo ucwords($nombre); ?></h5>
             <div class="">
-              <?php echo $contenidoBusca3; ?>
+              <?php echo $contenidoBusca3 ?>
             </div>
           </div>
         </div>
