@@ -1,4 +1,11 @@
 <!DOCTYPE HTML>
+<?php
+    $nombre=$_GET['nombre'];
+    $cadena = str_replace(" ","%20",$nombre);
+    require 'webScraping.php';
+    $html = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$cadena);
+ ?>
+
 <html lang="ES">
 <head>
   <title>MixLab</title>
@@ -20,7 +27,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="form-inline flex-row justify-content-md-center justify-content-start flex-nowrap" method="get" action="search.php">
+          <form class="form-inline flex-row justify-content-md-center justify-content-start flex-nowrap" method="get">
             <input class="form-control mr-sm-2 text-success border border-success" type="search" placeholder="Fabrik" aria-label="Fabrik" name="nombre">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
           </form>
@@ -31,37 +38,6 @@
       </div>
   </nav>
 
-  <!--IMAGENES SLIDER-->
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="https://media.watchthedj.com/djs/marcos-in-dub.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="http://growsoundmag.com/wp-content/uploads/2018/12/Richie-Hawting-1.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://i1.wp.com/hardgroupteam.com.ar/wp-content/uploads/2018/08/pan-pot.jpg?fit=1920%2C1080&ssl=1" alt="Third slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://i.pinimg.com/originals/3f/16/7b/3f167b889338148e60467905481b9a99.jpg" alt="Fourth slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://aquasella.com/wp-content/uploads/2019/02/nina-kraviz-1.jpg?x31048" alt="Fifth slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <!--INFO MIXLAB-->
-
   <li style="background-color: #b7b7b7">
     <section>
       <span class="d-block p-2 text-white" style="background-color: #716d6d;">
@@ -70,18 +46,16 @@
             MixLab
           </div>
           <div class="card-body" style="background-color: #716d6d;" style="border-bottom: 2px solid rgba(0, 0, 0)">
-            <h5 class="card-title text-success" style="font-size:4vw;">Tu plataforma de musica electrónica</h5>
-            <p class="card-text d-inline-flex p-2" style="margin-right: 50%; font-size:1.5vw;">
-              Somos un equipo de expertos de musica electronica a tu alcance.
-              Si sabes lo minimo ya sea un nombre, evento, sala o track, es hora
-              que uses nuestro buscador para estar al tanto de todo lo que ocurre.
-            </p>
+            <img src="<?php echo $imgDj; ?>" alt="">
+            <h5 class="card-title text-success" style="font-size:4vw;"><?php  echo ucwords($nombre); ?></h5>
+            <div class="">
+              <?php echo $contenidoBusca3; ?>
+            </div>
           </div>
         </div>
       </span>
     </section>
   </li>
-
 
 </body>
 </html>
