@@ -10,9 +10,9 @@ $cadena = str_replace(" ","%20",$nombre);
 $html2 = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$cadena);
 
 //SI HAY ALGUN ARTIRSTA PILLA SU NOMBRE
-$contenidoBusca1 = $html2->find('section.content');
+$contenidoBusca1 = $html2->find('section.content.clearfix');
 foreach ($contenidoBusca1 as $contents) {
-  $dj = $contents->find('div.generic.music a', 0)->href;
+  $dj = $contents->find('div.pb8 a', 0)->href;
 }
 
 //SE USA PARA LA IMG DESDE LA URL DEL ARTISTA
@@ -28,7 +28,7 @@ foreach ($html1 as $artist) {
 
 }
 
-
+//SACAR TEXTO DE LA BIOGRAFIA
 $html1BIOGRAFIA = file_get_html('https://residentadvisor.net'.$dj.'/biography');
 $contenidoBusca3 = $html1BIOGRAFIA->find('div.pr8.reading-line-height', 0);
 
