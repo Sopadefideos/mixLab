@@ -1,10 +1,6 @@
-<!DOCTYPE HTML>
 <?php
-$nombre=$_GET['nombre'];
-$cadena = str_replace(" ","%20",$nombre);
 require 'webScraping.php';
 require 'embed.php';
-$html = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$cadena);
 ?>
 
 <html lang="ES">
@@ -66,5 +62,5 @@ $html = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$
       </span>
 
     </section>
+    <?php echo $arrayJsonEmbed["embed"]; ?>
   </li>
-<iframe width="100%" height="120" src="<?php echo $enlaceEmbMix; ?>" frameborder="0" ></iframe>
