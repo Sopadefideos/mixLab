@@ -28,7 +28,7 @@ $resp = curl_exec($curl);
 $arrayJson = json_decode($resp, true);
 //var_dump($arrayJson);
 
-$solucionEnlaceCancion = $arrayJson['data'][1]['key'];
+$solucionEnlaceCancion = $arrayJson['data'][0]['key'];
 
 // Close request to clear up some resources
 curl_close($curl);

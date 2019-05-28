@@ -7,13 +7,16 @@ $cadena = str_replace(" ","%20",$nombre);
 $html2 = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$cadena);
 //SI HAY ALGUN ARTIRSTA PILLA SU NOMBRE
 $comprobarBusca = $html2->find('section.content');
+$contadorArtistas = 0;
 foreach ($comprobarBusca as $contents) {
-  $resultadoBusca = $contents->find('h1', 0)->plaintext;
+  if($contents->find('h1', 0)->plaintext == 'Your search returned 0 results.'){
+    echo"<script>alert('El artista no existe.');window.location.href=\"index.php\"</script>";
+  }
 }
-if($resultadoBusca == 'Your search returned 0 results.'){
-  echo"<script>alert('El artista no existe.');window.location.href=\"index.php\"</script>";
+$contents = $html2->find('section.content.clearfix div.pb8 a');
+if(empty($contents)){
+  echo"<script>alert('Especifica mas sobre el artista.');window.location.href=\"index.php\"</script>";
 }
-
 $contenidoBusca1 = $html2->find('section.content.clearfix');
 foreach ($contenidoBusca1 as $contents) {
   $dj = $contents->find('div.pb8 a', 0)->href;

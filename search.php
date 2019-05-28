@@ -1,6 +1,7 @@
 <?php
 require 'webScraping.php';
 require 'embed.php';
+require 'YT.php';
 ?>
 
 <html lang="ES">
@@ -63,4 +64,5 @@ require 'embed.php';
 
     </section>
     <?php echo $arrayJsonEmbed["embed"]; ?>
+    <iframe width="100%" height="100%" style="margin-top: +10px;" src="<?php echo $enlaceYTEmbed; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </li>
