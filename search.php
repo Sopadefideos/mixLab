@@ -3,6 +3,7 @@
 $nombre=$_GET['nombre'];
 $cadena = str_replace(" ","%20",$nombre);
 require 'webScraping.php';
+require 'embed.php';
 $html = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$cadena);
 ?>
 
@@ -66,4 +67,4 @@ $html = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$
 
     </section>
   </li>
-<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Falanfitzpatrick%2Fwe-are-the-brave-radio-055-alan-fitzpatrick-b2b-ash%2F" frameborder="0" ></iframe>
+<iframe width="100%" height="120" src="<?php echo $enlaceEmbMix; ?>" frameborder="0" ></iframe>
