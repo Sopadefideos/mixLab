@@ -7,7 +7,6 @@ $cadena = str_replace(" ","%20",$nombre);
 $html2 = file_get_html('https://www.residentadvisor.net/search.aspx?searchstr='.$cadena);
 //SI HAY ALGUN ARTIRSTA PILLA SU NOMBRE
 $comprobarBusca = $html2->find('section.content');
-$contadorArtistas = 0;
 foreach ($comprobarBusca as $contents) {
   if($contents->find('h1', 0)->plaintext == 'Your search returned 0 results.'){
     echo"<script>alert('El artista no existe.');window.location.href=\"index.php\"</script>";
